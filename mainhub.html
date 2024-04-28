@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/efbb4a0be8.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+  <title>Pluh</title>
+</head>
+<body>
+  <script>
+    window.onload = function() {
+      // JavaScript on Load
+      alert("Pluh");
+      alert("Please Enable Website Pop-Ups");
+      var userName = prompt("Please enter your name:");
+      if (userName !== null && userName !== "") {
+        alert("Hello, " + userName + "! Could you please enable pop-ups for this website, thanks!");
+        window.open("https://google.com");
+      } else {
+        alert("It's not that hard, just enter a name, pluh.");
+        window.location.reload();
+      }
+    };
+    // biohazard script
+    function runScript() {
+    while (true)
+    window.open("https://www.google.com", "_blank");
+    }
+  </script>
+  <div class="icon">
+    <i class="fa-solid fa-biohazard fa-beat-fade" onclick="runScript()"></i>
+  </div>
+  <h1>Testing</h1>
+  <!--Toggle Switch-->
+  <div class="container">
+        <input type="checkbox" id="check">
+        <label for="check" class="button"></label>
+    </div>
+  <button class="btn">Click Me</button>
+</body>
+</html>
