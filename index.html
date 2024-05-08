@@ -1,50 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login Page</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #ffffff; /* Set background color to white */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-  }
-</style>
 </head>
+
 <body>
-<script>
-var correctPassword = String.fromCharCode(90, 104, 97, 111);
-var password = prompt("Please enter your password:");
-if (password === correctPassword) {
-  var url = "hub.html";
+  <button>Fullscreen</button>
+  <script>
+    function runScript() {
+      var urlObj = new window.URL(window.location.href);
+      var url = "startup.html";
+      if (url) {
+        var win;
 
-  function openFullscreen() {
-    var win = window.open('', '_self');
-    if (win) {
-      win.document.body.style.margin = '0';
-      win.document.body.style.height = '100vh';
-      var iframe = win.document.createElement('iframe');
-      iframe.style.border = 'none';
-      iframe.style.width = '100%';
-      iframe.style.height = '100%';
-      iframe.style.margin = '0';
-      iframe.src = url;
-      win.document.body.appendChild(iframe);
-      document.querySelector('button').style.background = 'grey';
-      document.querySelector('button').innerHTML = "?";
-      window.close(); // Attempt to close the original window
-    } else {
-      window.location.href = url; // Fallback if popup blocked
+        function openFullscreen() {
+          if (win) {
+            win.focus();
+          } else {
+            win = window.open();
+            win.document.body.style.margin = '0';
+            win.document.body.style.height = '100vh';
+            var iframe = win.document.createElement('iframe');
+            iframe.style.border = 'none';
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.margin = '0';
+            iframe.src = url;
+            win.document.body.appendChild(iframe);
+          }
+          document.querySelector('button').style.background = 'grey'; // Fixed typo
+          document.querySelector('button').innerHTML = "?";
+          // Attempt to close the original window
+          window.close();
+        }
+
+        openFullscreen();
+      }
     }
-  }
 
-  openFullscreen();
-} else {
-  window.location.href = "https://www.google.com/search?q=cope&sca_esv=9dd3c420e69a4ab3&sca_upv=1&sxsrf=ACQVn0_jh5WQa6HlvfHBcFNe3j4nbVWf-A%3A1713835054259&source=hp&ei=LgwnZrXuDde9kPIP_r2XqAE&iflsig=ANes7DEAAAAAZicaPmsfCCW_m472Mwp8ho-QchFF6VnX&ved=0ahUKEwi1vfGMldeFAxXXHkQIHf7eBRUQ4dUDCBg&uact=5&oq=cope&gs_lp=Egdnd3Mtd2l6IgRjb3BlMgoQIxiABBgnGIoFMg0QABiABBixAxhDGIoFMggQLhiABBixAzIIEC4YgAQYsQMyChAAGIAEGEMYigUyChAAGIAEGEMYigUyCBAAGIAEGLEDMgQQABgDMgsQABiABBixAxiDATILEC4YgAQYsQMYgwFI-ANQAFiiA3AAeACQAQCYAVGgAaICqgEBNLgBA8gBAPgBAZgCBKACtALCAgQQIxgnwgIKEC4YgAQYQxiKBcICERAuGIAEGLEDGNEDGIMBGMcBwgINEC4YgAQYsQMYQxiKBZgDAJIHATSgB68t&sclient=gws-wiz";
-}
-</script>
-<button style="position: fixed; top: 10px; right: 10px; background-color: green; color: white; padding: 10px; border: none; cursor: pointer;" onclick="openFullscreen()">?</button>
+    // Call the function when the page loads
+    window.onload = runScript;
+  </script>
 </body>
+
 </html>
