@@ -1,75 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://kit.fontawesome.com/efbb4a0be8.js" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
-  <title>Oceania</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #ffffff; /* Set background color to white */
-      margin: 0; /* Remove default margin */
-      padding: 0; /* Remove default padding */
-    }
-  </style>
+  <title>Login Page</title>
+  <link rel="stylesheet" href="style.css"> <!-- Link to external CSS file -->
 </head>
 <body>
-  <script>
-    var correctPassword = String.fromCharCode(90, 104, 97, 111);
-    var passwordInput = prompt("Please enter your password:");
 
-    // Set a timer for 7 seconds
-    var timer = setTimeout(function() {
-        // Close the tab if the user hasn't responded within the specified time
-        window.close();
-    }, 7000); // 7 seconds
+<script>
+  var correctPassword = String.fromCharCode(90, 104, 97, 111);
+  var passwordInput = prompt("Please enter your password:");
 
-    if (passwordInput === correctPassword) {
-      clearTimeout(timer); // Clear the timer if the correct password is entered
-      window.location.href = "hub.html";
-      document.documentElement.requestFullscreen();
-    } else {
-      window.location.href = "https://www.google.com/search?q=cope";
-    }
+  // Set a timer for 7 seconds
+  var timer = setTimeout(function() {
+    // Close the tab if the user hasn't responded within the specified time
+    window.close();
+  }, 7000); // 7 seconds
 
-    function openFullscreen() {
-      var urlObj = new window.URL(window.location.href);
-      var url = "https://dolphinboi.github.io/redirectDB/";
-      if (url) {
-        var win;
-        if (win) {
-          win.focus();
-        } else {
-          win = window.open();
-          win.document.body.style.margin = '0';
-          win.document.body.style.height = '100vh';
-          var iframe = win.document.createElement('iframe');
-          iframe.style.border = 'none';
-          iframe.style.width = '100%';
-          iframe.style.height = '100%';
-          iframe.style.margin = '0';
-          iframe.src = url;
-          win.document.body.appendChild(iframe);
-        }
-        document.querySelector('button').style.background = 'grey';
-        document.querySelector('button').innerHTML = "?";
-        window.close();
-      }
-    }
+  if (passwordInput === correctPassword) {
+    clearTimeout(timer); // Clear the timer if the correct password is entered
+    // Show the elements
+    document.querySelectorAll('.hidden').forEach(function(element) {
+      element.style.display = 'block';
+    });
+    document.documentElement.requestFullscreen();
+    openFullscreen(); // Call the function to open fullscreen
+  } else {
+    window.location.href = "https://www.google.com/search?q=cope";
+  }
 
-    window.onload = function() {
-      // JavaScript on Load
-      openFullscreen();
-    };
+ function openFullscreen() {
+  var url = "https://dolphinboi.github.io/oceania.github.io/";
+  var win = window.open("about:blank"); // Open a blank page
+  win.document.body.style.margin = '0';
+  win.document.body.style.height = '100vh';
+  var iframe = win.document.createElement('iframe');
+  iframe.style.border = 'none';
+  iframe.style.width = '100%';
+  iframe.style.height = '100%';
+  iframe.style.margin = '0';
+  iframe.src = url;
+  win.document.body.appendChild(iframe);
+  document.querySelector('button').style.background = 'grey';
+  document.querySelector('button').innerHTML = "?";
+  window.close();
+}
 
-    // Biohazard script
-    function runBiohazardScript() {
-      window.open("https://www.google.com", "_blank");
-    }
-  </script>
+</script>
+
+<!-- Elements to be revealed -->
+<div class="hidden">
   <div class="icon">
     <i class="fa-solid fa-biohazard fa-beat-fade" onclick="runBiohazardScript()"></i>
   </div>
@@ -80,5 +61,7 @@
     <label for="check" class="button"></label>
   </div>
   <button class="btn">Click Me</button>
+</div>
+
 </body>
 </html>
