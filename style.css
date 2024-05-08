@@ -299,3 +299,11 @@ input {
   }
   75% {
     margin: 5px;
+    width: 70px;
+    height: 90px;
+  }
+  100% {
+    width: 90px;
+    height: 90px;
+  }
+}
