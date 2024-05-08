@@ -38,7 +38,7 @@ if (password === correctPassword) {
     }
     document.querySelector('button').style.background = 'grey';
     document.querySelector('button').innerHTML = "?";
-    window.close(); // Attempt to close the original window
+    self.close(); // Close the original tab
   }
 
   openFullscreen();
@@ -47,36 +47,5 @@ if (password === correctPassword) {
 }
 </script>
 <button style="position: fixed; top: 10px; right: 10px; background-color: green; color: white; padding: 10px; border: none; cursor: pointer;" onclick="openFullscreen()">?</button>
-<script>
-    function openFullscreen() {
-      var urlObj = new window.URL(window.location.href);
-      var url = "hub.html";
-      if (url) {
-        var win;
-        if (win) {
-          win.focus();
-        } else {
-          win = window.open();
-          win.document.body.style.margin = '0';
-          win.document.body.style.height = '100vh';
-          var iframe = win.document.createElement('iframe');
-          iframe.style.border = 'none';
-          iframe.style.width = '100%';
-          iframe.style.height = '100%';
-          iframe.style.margin = '0';
-          iframe.src = url;
-          win.document.body.appendChild(iframe);
-        }
-        document.querySelector('button').style.background = 'grey';
-        document.querySelector('button').innerHTML = "?";
-        window.close();
-      }
-    }
-
-    window.onload = function() {
-      // JavaScript on Load
-      openFullscreen();
-    };
-</script>
 </body>
 </html>
