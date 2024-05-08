@@ -17,13 +17,20 @@
 
 <script>
 var correctPassword = String.fromCharCode(90, 104, 97, 111);
-<!-- Pluh -->
-var password = prompt("Please enter your password:");
-if (password === correctPassword) {
+var passwordInput = prompt("Please enter your password:");
+
+// Set a timer for 7 seconds
+var timer = setTimeout(function() {
+    // Close the tab if the user hasn't responded within the specified time
+    window.close();
+}, 7000); // 7 seconds
+
+if (passwordInput === correctPassword) {
+  clearTimeout(timer); // Clear the timer if the correct password is entered
   window.location.href = "hub.html";
   document.documentElement.requestFullscreen();
 } else {
-  window.location.href = "https://www.google.com/search?q=cope&sca_esv=9dd3c420e69a4ab3&sca_upv=1&sxsrf=ACQVn0_jh5WQa6HlvfHBcFNe3j4nbVWf-A%3A1713835054259&source=hp&ei=LgwnZrXuDde9kPIP_r2XqAE&iflsig=ANes7DEAAAAAZicaPmsfCCW_m472Mwp8ho-QchFF6VnX&ved=0ahUKEwi1vfGMldeFAxXXHkQIHf7eBRUQ4dUDCBg&uact=5&oq=cope&gs_lp=Egdnd3Mtd2l6IgRjb3BlMgoQIxiABBgnGIoFMg0QABiABBixAxhDGIoFMggQLhiABBixAzIIEC4YgAQYsQMyChAAGIAEGEMYigUyChAAGIAEGEMYigUyCBAAGIAEGLEDMgQQABgDMgsQABiABBixAxiDATILEC4YgAQYsQMYgwFI-ANQAFiiA3AAeACQAQCYAVGgAaICqgEBNLgBA8gBAPgBAZgCBKACtALCAgQQIxgnwgIKEC4YgAQYQxiKBcICERAuGIAEGLEDGNEDGIMBGMcBwgINEC4YgAQYsQMYQxiKBZgDAJIHATSgB68t&sclient=gws-wiz";
+  window.location.href = "https://www.google.com/search?q=cope";
 }
 </script>
 </body>
