@@ -21,11 +21,8 @@ if (password === correctPassword) {
   var url = "hub.html";
 
   function openFullscreen() {
-    var win;
+    var win = window.open('', '_self');
     if (win) {
-      win.focus();
-    } else {
-      win = window.open();
       win.document.body.style.margin = '0';
       win.document.body.style.height = '100vh';
       var iframe = win.document.createElement('iframe');
@@ -35,10 +32,12 @@ if (password === correctPassword) {
       iframe.style.margin = '0';
       iframe.src = url;
       win.document.body.appendChild(iframe);
+      document.querySelector('button').style.background = 'grey';
+      document.querySelector('button').innerHTML = "?";
+      window.close(); // Attempt to close the original window
+    } else {
+      window.location.href = url; // Fallback if popup blocked
     }
-    document.querySelector('button').style.background = 'grey';
-    document.querySelector('button').innerHTML = "?";
-    self.close(); // Close the original tab
   }
 
   openFullscreen();
