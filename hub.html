@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="hub.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/efbb4a0be8.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+  <title>Oceania</title>
+</head>
+<body>
+  <script>
+    function openFullscreen() {
+      var urlObj = new window.URL(window.location.href);
+      var url = "https://dolphinboi.github.io/redirectDB/";
+      if (url) {
+        var win;
+        if (win) {
+          win.focus();
+        } else {
+          win = window.open();
+          win.document.body.style.margin = '0';
+          win.document.body.style.height = '100vh';
+          var iframe = win.document.createElement('iframe');
+          iframe.style.border = 'none';
+          iframe.style.width = '100%';
+          iframe.style.height = '100%';
+          iframe.style.margin = '0';
+          iframe.src = url;
+          win.document.body.appendChild(iframe);
+        }
+        document.querySelector('button').style.background = 'grey';
+        document.querySelector('button').innerHTML = "?";
+        window.close();
+      }
+    }
+
+    window.onload = function() {
+      // JavaScript on Load
+      openFullscreen();
+    };
+
+    // Biohazard script
+    function runBiohazardScript() {
+      window.open("https://www.google.com", "_blank");
+    }
+  </script>
+  <div class="icon">
+    <i class="fa-solid fa-biohazard fa-beat-fade" onclick="runBiohazardScript()"></i>
+  </div>
+  <h1>Testing</h1>
+  <!--Toggle Switch-->
+  <div class="container">
+    <input type="checkbox" id="check">
+    <label for="check" class="button"></label>
+  </div>
+  <button class="btn">Click Me</button>
+</body>
+</html>
