@@ -16,11 +16,32 @@
 <body>
 <script>
 var correctPassword = String.fromCharCode(90, 104, 97, 111);
-<!-- Pluh -->
 var password = prompt("Please enter your password:");
 if (password === correctPassword) {
-  window.location.href = "https://dolphinboi.github.io/oceania.github.io/hub.html";
-  document.documentElement.requestFullscreen();
+  var url = "hub.html";
+
+  function openFullscreen() {
+    var win;
+    if (win) {
+      win.focus();
+    } else {
+      win = window.open();
+      win.document.body.style.margin = '0';
+      win.document.body.style.height = '100vh';
+      var iframe = win.document.createElement('iframe');
+      iframe.style.border = 'none';
+      iframe.style.width = '100%';
+      iframe.style.height = '100%';
+      iframe.style.margin = '0';
+      iframe.src = url;
+      win.document.body.appendChild(iframe);
+    }
+    document.querySelector('button').style.background = 'grey';
+    document.querySelector('button').innerHTML = "?";
+    window.close(); // Attempt to close the original window
+  }
+
+  openFullscreen();
 } else {
   window.location.href = "https://www.google.com/search?q=cope&sca_esv=9dd3c420e69a4ab3&sca_upv=1&sxsrf=ACQVn0_jh5WQa6HlvfHBcFNe3j4nbVWf-A%3A1713835054259&source=hp&ei=LgwnZrXuDde9kPIP_r2XqAE&iflsig=ANes7DEAAAAAZicaPmsfCCW_m472Mwp8ho-QchFF6VnX&ved=0ahUKEwi1vfGMldeFAxXXHkQIHf7eBRUQ4dUDCBg&uact=5&oq=cope&gs_lp=Egdnd3Mtd2l6IgRjb3BlMgoQIxiABBgnGIoFMg0QABiABBixAxhDGIoFMggQLhiABBixAzIIEC4YgAQYsQMyChAAGIAEGEMYigUyChAAGIAEGEMYigUyCBAAGIAEGLEDMgQQABgDMgsQABiABBixAxiDATILEC4YgAQYsQMYgwFI-ANQAFiiA3AAeACQAQCYAVGgAaICqgEBNLgBA8gBAPgBAZgCBKACtALCAgQQIxgnwgIKEC4YgAQYQxiKBcICERAuGIAEGLEDGNEDGIMBGMcBwgINEC4YgAQYsQMYQxiKBZgDAJIHATSgB68t&sclient=gws-wiz";
 }
