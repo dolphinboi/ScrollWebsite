@@ -1,19 +1,19 @@
-
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
 
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
-body{
+
+body {
   background: black;
   min-height: 100vh;
   color: white;
-  }
+}
 
 .background {
   height: 100%;
@@ -21,13 +21,14 @@ body{
   overflow: hidden;
   box-sizing: border-box;
 }
+
 canvas {
   width: 100%;
   height: 100%;
 }
-/*Nav Bar*/
 
-section{
+/* Nav Bar */
+section {
   position: relative;
   display: flex;
   justify-content: center;
@@ -36,12 +37,12 @@ section{
   color: #fff;
 }
 
-.header{
+.header {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  padding:20px 100px;
+  padding: 20px 100px;
   background: seagreen;
   display: flex;
   justify-content: space-between;
@@ -52,7 +53,7 @@ section{
 .logo {
   font-size: 32px;
   color: #fff;
-  text-decoration:none;
+  text-decoration: none;
   font-weight: 700;
 }
 
@@ -81,7 +82,7 @@ section{
 }
 
 /* About Me */
-.container{
+.container {
   position: relative;
   display: flex;
   justify-content: center;
@@ -89,12 +90,12 @@ section{
   flex-direction: column;
 }
 
-.main-title{
+.main-title {
   font-size: 4em;
   margin-bottom: 50px;
 }
 
-.content{
+.content {
   position: relative;
   width: 1150px;
   display: flex;
@@ -102,14 +103,14 @@ section{
   align-items: center;
 }
 
-.content .image{
+.content .image {
   position: relative;
   width: 800px;
   height: 400px;
   overflow: hidden;
 }
 
-.content .image img{
+.content .image img {
   z-index: 111;
   position: absolute;
   top: 0;
@@ -120,7 +121,7 @@ section{
   border-radius: 10px;
 }
 
-.content .text-box{
+.content .text-box {
   z-index: 222;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
@@ -131,68 +132,70 @@ section{
   transform: translate(-80px, 50px);
 }
 
-.content .text-box h3{
+.content .text-box h3 {
   font-size: 2em;
   margin-bottom: 10px;
 }
 
-.media-icons{
+.media-icons {
   margin-top: 100px;
 }
 
-.media-icons a{
+.media-icons a {
   color: #fff;
   font-size: 2em;
   margin: 60px;
 }
 
-.section-title{
+.section-title {
   font-size: 3em;
   margin-bottom: 80px;
 }
 
-.info-title{
+.info-title {
   font-size: 1.8em;
   margin-bottom: 10px;
 }
 
-.info{
+.info {
   width: 700px;
   margin-left: 50px;
 }
 
-.media-info{
+.media-info {
   width: 400px;
   margin-left: 50px;
 }
 
-.media-info li{
+.media-info li {
   list-style: none;
   font-size: 1.4em;
 }
 
-.media-info li a{
+.media-info li a {
   color: #fff;
   text-decoration: none;
 }
 
-.media-info li:not(:last-child){
+.media-info li:not(:last-child) {
   margin-bottom: 50px;
 }
 
-.media-info li:nth-child(1), .media-info li:nth-child(5){
+.media-info li:nth-child(1),
+.media-info li:nth-child(5) {
   padding-left: 100px;
 }
 
-.media-info li:nth-child(2), .media-info li:nth-child(4){
+.media-info li:nth-child(2),
+.media-info li:nth-child(4) {
   padding-left: 50px;
 }
 
-.sec-03{
+.sec-03 {
   margin-bottom: 100px;
 }
 
-.sec-03 img{
+.sec-03 img {
   z-index: 111;
   top: 0;
   left: 0;
@@ -206,3 +209,93 @@ section{
   margin-top: -200px;
   margin-left: px;
 }
+
+/* New CSS Rules */
+
+.icon {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 7px; /* Adjust this value to add space from the top and left edges */
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 0.5em 1em;
+  color: var(--clr-accent);
+  background-color: var(--clr-accent); /* Change background color to match */
+  border: 10px solid var(--clr-accent);
+  border-radius: 5px;
+  /*transition-property: transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  transition-delay: 0s;*/
+  transition: all 0.3s;
+}
+
+.icon:hover {
+  transform: translateY(-10px);
+  background-color: var(--clr-light); /* Change background color on hover */
+  color: var(--clr-accent); /* Change text color on hover */
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: #f1eaff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  width: 200px;
+  height: 100px;
+  background-color: #d2d2d2;
+  border-radius: 200px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.2s;
+}
+
+.button::before {
+  position: absolute;
+  content: "";
+  width: 90px;
+  height: 90px;
+  background-color: #fff;
+  border-radius: 200px;
+  margin: 5px;
+  transition: 0.2s;
+}
+
+input:checked + .button {
+  background-color: blue;
+}
+
+input:checked + .button::before {
+  transform: translateX(100px);
+  animation-name: toggle;
+  animation-duration: 0.8s;
+  transition-delay: 0.2s;
+}
+
+input {
+  display: none;
+}
+
+@keyframes toggle {
+  0% {
+    width: 90px;
+    height: 90px;
+  }
+  25% {
+    margin: 10px;
+    width: 30px;
+    height: 80px;
+  }
+  50% {
+    margin: 20px;
+    width: 100px;
+    height: 60px;
+  }
+  75% {
+    margin: 5px;
